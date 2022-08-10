@@ -1,0 +1,91 @@
+---
+title: "EDS 221 Day 3 - Conditional Loops"
+author: "Alex Reed"
+date: "2022-08-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+### Task 1
+```{r}
+pm2_5 <- 48
+
+if (pm2_5 < 100) {
+  print("Low to moderate risk")
+} else if (pm2_5 <= 100 & pm2_5 < 150) {
+  print("Unhealthy for sensisitve groups")
+} else if (pm2_5 >= 150) {
+  print("Health risk present")
+}
+```
+
+### Task 2
+
+```{r}
+species <- "blue whale"
+
+if (str_detect(species, pattern = "blue whale")) {
+  print("You found a whale")
+}
+```
+
+### Task 3
+
+```{r}
+#Create a vector stored as max_airtemp_c with a value of 24.1. Write an if else statement that will print “Temperature too high” if max_airtemp_c is greater than 27, or “Temperature OK” if temperature is less than or equal to 27.
+
+max_airtemp_c <- 24.1
+
+if (max_airtemp_c > 27) {
+  print("Temperature too high")
+} else if (max_airtemp_c <= 27) {
+  print("Temperature OK")
+}
+
+```
+
+### Task 4
+```{r}
+#Store the base price of a burrito as base_burrito with a value of 6.50. Store main_ingredient with a starting string of “veggie.” Write a statement that will return the price of a burrito based on what a user specifies as “main_ingredient” (either “veggie”, “chicken” or “steak”) given the following:
+
+base_burrito <- 6.50
+main_ingredient <- "chicken"
+
+if (main_ingredient == "veggie") {
+  print(base_burrito)
+} else if (main_ingredient == "chicken") {
+  print(base_burrito + 3) 
+} else if (main_ingredient == "steak") {
+  print(base_burrito + 3.25)
+}
+
+```
+
+### Task 5
+
+```{r}
+fish <- c(8, 10, 12, 23)
+
+for (i in seq_along(fish)) {
+  val = fish[i]/sum(fish)
+  print(val)
+}
+```
+
+### Task 6
+
+```{r}
+
+for (i in seq_along(month.name)) {
+  print(paste(month.name[i], "is month", i))
+}
+```
+
+
+
+
+
